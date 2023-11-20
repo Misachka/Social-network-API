@@ -38,7 +38,7 @@ module.exports = {
             })
             .then((user) =>
                 !user
-                    ? res.status(404).json({ message: "Thought created but no user with this id found" })
+                ? res.status(404).json({ message: "Thought created" })
                     : res.json({
                         updatedUser: user,
                         message: 'Thought added to user'
@@ -81,6 +81,7 @@ module.exports = {
                         { runValidators: true, new: true }
                     )
             )
+           
             .then((user) =>
                 !user
                     ? res.status(404).json({ message: 'No user with this deleted thought found' })
